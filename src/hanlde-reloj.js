@@ -1,32 +1,9 @@
+import { diaSemana, meses } from "./data/days-weeks.js";
+
 const showFecha = document.getElementById("fecha");
 const showReloj = document.getElementById("reloj");
 
 let fecha = new Date();
-
-const diaSemana = [
-  "Domingo",
-  "Lunes",
-  "Martes",
-  "Miercoles",
-  "Jueves",
-  "Viernes",
-  "Sabadp",
-];
-
-const meses = [
-  "enero",
-  "febrero",
-  "marzo",
-  "abril",
-  "mayo",
-  "junio",
-  "julio",
-  "agosto",
-  "septiembre",
-  "octubre",
-  "noviembre",
-  "diciembre",
-];
 
 let fechaHoy = `${diaSemana[fecha.getDay()]}, ${fecha.getDate()} de ${
   meses[fecha.getMonth()]
