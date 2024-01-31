@@ -1,6 +1,7 @@
-import "./handle-input.js";
-import "./hanlde-reloj.js";
+import { initialButton } from "./handle-input.js";
+import { getElemts } from "./functions/getElements.js";
 import { getUserName } from "./controllers/name-controller.js";
+import "./hanlde-reloj.js";
 
 const body = document.body;
 
@@ -8,12 +9,13 @@ body.onload = showNameDocument;
 
 export function showNameDocument() {
   if (getUserName() === "" || getUserName() == undefined) {
-    const refName = document.getElementById("nombre");
+    const { refName } = getElemts();
     refName.textContent = "Usuario";
   } else {
-    const refName = document.getElementById("nombre");
-    const button = document.getElementById("set-name");
+    const { refName, button } = getElemts();
     refName.textContent = getUserName();
     button.textContent = "Cambiar nombre";
   }
+
+  initialButton();
 }

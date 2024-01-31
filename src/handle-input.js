@@ -1,32 +1,32 @@
-import { getUserName } from "./controllers/name-controller.js";
-let isShowInput = false;
-let thereIsName = getUserName() == undefined ? false : true;
-const button = document.getElementById("set-name");
-button.addEventListener("click", showInput);
+import { getElemts } from "./functions/getElements.js";
+
+export function initialButton() {
+  const { button } = getElemts();
+  button.addEventListener("click", showInput);
+}
 
 function showInput() {
-  const refName = document.getElementById("nombre");
-  const input = document.getElementById("input-set-name");
+  const { button, refName, input } = getElemts();
   refName.classList.add("hidden-element");
   input.classList.remove("hidden-element");
-  isShowInput = true;
   changeTextButton();
   button.removeEventListener("click", showInput);
   button.addEventListener("click", hiddenInput);
 }
 
 function hiddenInput() {
-  const refName = document.getElementById("nombre");
-  const input = document.getElementById("input-set-name");
+  const { button, refName, input } = getElemts();
   input.classList.add("hidden-element");
   refName.classList.remove("hidden-element");
-  isShowInput = false;
   changeTextButton();
   button.removeEventListener("click", hiddenInput);
   button.addEventListener("click", showInput);
 }
 
 function changeTextButton() {
+  const { isShowInput, thereIsName, button } = getElemts();
+  console.log("hay nombre: " + thereIsName);
+  console.log("se muestra input: " + isShowInput);
   const saveText = thereIsName ? "Cambiar" : "Establecer";
   const text = isShowInput ? "Guardar nombre" : `${saveText} nombre`;
   button.textContent = text;
