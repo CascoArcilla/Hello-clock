@@ -25,8 +25,6 @@ function hiddenInput() {
 
 function changeTextButton() {
   const { isShowInput, thereIsName, button } = getElemts();
-  console.log("hay nombre: " + thereIsName);
-  console.log("se muestra input: " + isShowInput);
   const saveText = thereIsName ? "Cambiar" : "Establecer";
   const text = isShowInput ? "Guardar nombre" : `${saveText} nombre`;
   button.textContent = text;

@@ -29,16 +29,6 @@ h3 {
     font-size: 28px;
 }
 
-@media (min-width: 420px) {
-    h1 {
-        font-size: 48px;
-    }
-
-    h3 {
-        font-size: 32px;
-    }
-}
-
 fieldset {
     padding: 0 30px;
     border-radius: 20px;
@@ -66,9 +56,14 @@ fieldset legend {
     display: none;
 }
 
+.input-set-name {
+    color: black;
+    text-align: left;
+    padding: 4px 6px;
+}
+
 #name-user {
     font-size: 18px;
-
 }
 
 #name-user span {
@@ -92,4 +87,22 @@ fieldset legend {
 #set-name:active {
     transform: translate(3px, 3px);
     box-shadow: 2px 2px 0 green;
+}
+
+@media (min-width: 420px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+
+}
+
+@media (max-width: 419px) {
+    .container-name {
+        flex-direction: column;
+    }
 }
